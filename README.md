@@ -1,4 +1,6 @@
-# [Output-Constrained Bayesian Neural Networks (OC-BNN)](https://arxiv.org/abs/1905.06287)
+# Output-Constrained Bayesian Neural Networks (OC-BNN)
+
+### Update: A longer version of our [ICML 2019 workshop paper](https://arxiv.org/abs/1905.06287) has recently been accepted at NeurIPS 2020 (paper [here](https://arxiv.org/abs/2010.10969)). This repository will be updated before the conference in December to include the additional work we've done, as well as optimize the existing code here + fix some minor bugs. Stay tuned! Feel free to reach out at wanqian at alumni dot harvard dot edu with any questions.
 
 This open-source repository contains the codebase for the implementation of OC-BNNs, as well as synthetic data used to generate the results in the paper. We have designed this repository not only for paper reproducibility purposes, but also as a general purpose library for implementing both OC-BNNs and generic (vanilla) BNNs. We hope this resource will be helpful for practitioners working with BNNs.
 

@@ -16,7 +16,7 @@ The key challenge that our paper targets is imposing **output constraints** on B
 For more details, check out our paper (linked above).
 
 
-### Getting Started
+## Getting Started
 
 This codebase is written in [Python 3.7.4](https://www.python.org/downloads/release/python-374/) and built on top of [PyTorch](https://pytorch.org/). The only setup instruction is to run the shell command `pip install -r requirements.txt` to install all dependencies. You might find it helpful to set up a [virtual environment](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) for managing dependencies. That's it, you are good to go!
 
@@ -41,7 +41,7 @@ Our codebase contains implementations of 4 different inference algorithms. Toget
 4. [Bayes by Backprop](https://arxiv.org/pdf/1505.05424.pdf)
 
 
-### Questions
+## Questions
 
 **How do I add my own dataset?**
 

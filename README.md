@@ -16,7 +16,7 @@ In this context, our research is an effort towards formulating interpretable and
 
 ### Constraint Priors
 
-![toy-results](https://github.com/dtak/ocbnn-public/blob/master/images/toyresults.png "Results of synthetic experiments in paper.")
+![toy-results](https://github.com/dtak/ocbnn-public/blob/workshop/images/toyresults.png "Results of synthetic experiments in paper.")
 
 The main idea behind CPs is to explictly include a "constraint term" _**g(W|C)**_, which measures how much the parameters _**W**_ respect the constraints _**C**_. The overall prior term is then _**p(W) = f(W) \* g(W|C)**_, where _**f(W)**_ is just the standard isotropic Gaussian term. It must be emphasized that (1) _**g(W|C)**_ is a proper probability distribution, and that (2) it is still defined in parameter space instead of functional space. We consider two different kinds of constraints, and formulate the appropriate _**g**_ for each constraint type:
 
@@ -38,7 +38,7 @@ This library allows you to run an OC-BNN with either positive or negative constr
 
 These represent both MCMC and variational methods (in the case of SVGD, both at the same time ;). Here is a nice picture comparing the posterior distributions of all 4 inference methods on both regression and classification:
 
-![bakeoff-image](https://github.com/dtak/ocbnn-public/blob/master/images/bakeoff.png "{HMC, SVGD, SGLD, BBB}")
+![bakeoff-image](https://github.com/dtak/ocbnn-public/blob/workshop/images/bakeoff.png "{HMC, SVGD, SGLD, BBB}")
 
 
 ### Getting Started
@@ -50,9 +50,9 @@ This repository is written in [Python 3.7](https://www.python.org/downloads/rele
 There are 4 scripts that you can run:
 
 - `main_example.py` contains an example each of: (i) a vanilla BNN, (ii) OC-BNN with negative constraints, and (iii) OC-BNN with positive constraints.  
-- `main_toys.py` contains all 6 synthetic experiments showcased in the paper (with the vanilla BNN as the baseline). [Results [here](https://github.com/dtak/ocbnn-public/blob/master/images/toyresults.png)]
-- `main_bakeoff.py` contains an example each of all 4 inference algorithms, run on both (i) a regression task and (ii) a classification task. [Results [here](https://github.com/dtak/ocbnn-public/blob/master/images/bakeoff.png)]
-- `main_multi.py` contains an example on a high-dimensional dataset, using a public dataset from UCI. [Results [here](https://github.com/dtak/ocbnn-public/blob/master/images/energyresults.png)]
+- `main_toys.py` contains all 6 synthetic experiments showcased in the paper (with the vanilla BNN as the baseline). [Results [here](https://github.com/dtak/ocbnn-public/blob/workshop/images/toyresults.png)]
+- `main_bakeoff.py` contains an example each of all 4 inference algorithms, run on both (i) a regression task and (ii) a classification task. [Results [here](https://github.com/dtak/ocbnn-public/blob/workshop/images/bakeoff.png)]
+- `main_multi.py` contains an example on a high-dimensional dataset, using a public dataset from UCI. [Results [here](https://github.com/dtak/ocbnn-public/blob/workshop/images/energyresults.png)]
 
 You can refer to these scripts as examples to write your own OC-BNN (or plain BNN). A complete BNN run requires only 4 lines: 
 
@@ -79,7 +79,7 @@ A BNN object (as instantiated in Step 1 above) is defined by the inference metho
 
 Here is a diagram for the inheritance structure of all objects:
 
-![inheritance-image](https://github.com/dtak/ocbnn-public/blob/master/images/objects.png "Inheritance Structure")
+![inheritance-image](https://github.com/dtak/ocbnn-public/blob/workshop/images/objects.png "Inheritance Structure")
 
 
 ### Writing your own BNN

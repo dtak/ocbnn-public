@@ -1,0 +1,37 @@
+activation: rbf
+aocp_init_lr: 0.1
+aocp_init_mean: 0
+aocp_init_std: 0
+aocp_nepochs: 125
+aocp_std_multiplier: 1
+architecture:
+- 10
+bbb_epochs: 10000
+bbb_esamples: 5
+bbb_init_lr: 0.5
+bbb_init_mean: 0
+bbb_init_std: -0.5
+cocp_dirichlet_alpha: 0.85
+cocp_dirichlet_gamma: 10
+cocp_expo_gamma: 10000
+cocp_expo_tau:
+- 15
+- 2.0
+cocp_gaussian_sigma_c: 1.5
+hmc_epsilon: 0.003
+hmc_l: 50
+hmc_nburnin: 10000
+hmc_ninterval: 10
+infer_nsamples: 1000
+nbatches: 0
+ocp_nsamples: 300
+sgld_epa: 0.05
+sgld_epb: 60
+sgld_epgamma: 0.5
+sgld_nburnin: 15000
+sgld_ninterval: 10
+sigma_noise: 0.1
+sigma_w: 1
+svgd_epochs: 1000
+svgd_init_lr: 0.5
+use_ocbnn: false

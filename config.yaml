@@ -1,0 +1,52 @@
+## BNN configs
+## This YAML is intentionally written as a flat dictionary for ease of reference.
+
+architecture: [10] # [L_1, L_2, ... L_J] where L_j is the number of nodes in the j-th hidden layer (empty list for no hidden layer)
+sigma_w: 1 # standard deviation of weights for Gaussian prior
+activation: rbf # choice of: [rbf, relu]
+sigma_noise: 0.1 # standard deviation of output noise for regression tasks
+nbatches: 0 # number of batches to divide training data into
+infer_nsamples: 1000 # number of posterior samples to collect (note: should be <= 100 if SVGD is used)
+
+
+## Inference-specific
+## See papers referenced in `inference.py` for explanation of hyperparameters.
+
+hmc_nburnin: 10000 # no. of burn-in iterations
+hmc_ninterval: 10 # frequency of sampling (after burn-in), so total no. of iterations = hmc_nburnin + hmc_ninterval * infer_nsamples
+hmc_epsilon: 0.003 # HMC hyperparameter
+hmc_l: 50 # HMC hyperparameter
+
+bbb_epochs: 10000 # no. of optimization iterations
+bbb_init_mean: 0 # initialization mean of Gaussian variational parameters
+bbb_init_std: -0.5 # initialization standard deviation of Gaussian variational parameter
+bbb_init_lr: 0.01 # initial Adagrad learning rate
+bbb_esamples: 5 # number of variational samples used to compute the gradient estimates
+
+svgd_epochs: 1000 # no. of optimization iterations
+svgd_init_lr: 0.5 # initial Adagrad learning rate
+
+sgld_nburnin: 15000 # no. of burn-in iterations
+sgld_ninterval: 10 # frequency of sampling (after burn-in), so total no. of iterations = sgld_nburnin + sgld_ninterval * infer_nsamples
+sgld_epa: 0.05 # SGLD hyperparameter
+sgld_epb: 60 # SGLD hyperparameter
+sgld_epgamma: 0.5 # SGLD hyperparameter
+
+
+## OCBNN-specific
+## See our paper for explanation of hyperparameters. 
+
+use_ocbnn: false # whether to enforce output constraints or not
+ocp_nsamples: 100 # number of samples to draw from constrained region for estimating COCP
+
+cocp_expo_gamma: 10000 # Exponential COCP hyperparameter
+cocp_expo_tau: [15, 2.0] # Exponential COCP hyperparameter
+cocp_dirichlet_gamma: 1 # Dirichlet COCP hyperparameter
+cocp_dirichlet_alpha: 0.1  # Dirichlet COCP hyperparameter
+cocp_gaussian_sigma_c: 1.5 # Gaussian COCP hyperparameter
+
+aocp_nepochs: 50 # number of epochs for AOCP optimization
+aocp_init_mean: 0 # initialization mean of Gaussian variational parameters
+aocp_init_std: 0 # initialization standard deviation of Gaussian variational parameter
+aocp_init_lr: 0.1 # initial Adagrad learning rate
+aocp_std_multiplier: 1 # shrinkage factor on variational Gaussian standard deviation
